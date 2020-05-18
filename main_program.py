@@ -15,6 +15,12 @@ def main():
     make the code cleaner
     """
 
+    print("Hello in our CODECOOL store! What do you want to check?\n"
+          "Press 1 and enter if you want to display album info\n"
+          "Press 2 and enter if you want to print whole list of our albums\n"
+          "Press 3 and enter if you want to check albums' names of given genre\n"
+          ""
+    )
 
 if __name__ == '__main__':
     main()

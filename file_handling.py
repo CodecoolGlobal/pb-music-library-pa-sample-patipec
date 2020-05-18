@@ -35,6 +35,3 @@ def export_data(albums, filename='albums_data.txt', mode='a'):
     with open(filename, mode) as f:
         for album in albums:
             f.write(",".join(album))
-
-albums = "eee"
-export_data(albums, filename='albums_data.txt', mode='a')
