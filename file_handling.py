@@ -30,7 +30,7 @@ def export_data(albums, filename='albums_data.txt', mode='a'):
     :raises ValueError: if mode other than 'w' or 'a' was given. Error message:
         'Wrong write mode'
     """
-    if mode != "a" and mode != "w":
+    if mode != "a" or mode != "w":
         raise ValueError
     else:
         with open(filename, mode) as f:
