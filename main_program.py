@@ -1,6 +1,9 @@
+import music_reports
+import display
 """
 The main program should use functions from music_reports and display modules
 """
+
 
 def main():
     """
