@@ -1,4 +1,4 @@
-def print_album_info(album):
+def print_album_info(album): # something stupid is shown :/ string is sliced into char
     artist_index = 0
     name_index = 1
 
@@ -11,12 +11,12 @@ def print_albums_list(albums_data):
         print(' | '.join(album))
 
 
-def print_program_menu(menu_commands):
+def print_program_menu(menu_commands): # I know I shouuld use that but I had another sotution in my head :)
     for option in menu_commands:
         print(str(menu_commands.index(option)) + '----->' + option)
 
 
-def print_command_result(message):
+def print_command_result(message): # I know I shouuld use that but I had another sotution in my head :)
     vertical_spacing = 2
 
     print(vertical_spacing * '\n' + message)

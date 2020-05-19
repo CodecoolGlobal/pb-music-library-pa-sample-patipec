@@ -13,9 +13,10 @@ def import_data(filename='albums_data.txt'):
     """
     with open(filename, "r") as f:
         sample = f.readlines()
+        albums = []
         for record in sample:
-            return record.strip().split(",")
-
+            albums.append(record.strip().split(","))
+        return albums
 
 def export_data(albums, filename='albums_data.txt', mode='a'):
     """

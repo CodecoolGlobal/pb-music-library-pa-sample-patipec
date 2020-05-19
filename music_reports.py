@@ -2,9 +2,7 @@ ARTIST = 0
 ALBUM = 1
 YEAR = 2
 GENRE = 3
-LASTS = 4
-
-def get_albums_from_file():
+LENGHT = 4
 
 
 def get_albums_by_genre(albums, genre):
@@ -21,7 +19,13 @@ def get_albums_by_genre(albums, genre):
     for record in albums:
         if record[GENRE] == genre:
             album_in_genre.append(record[ALBUM])
-    return album_in_genre
+    return ",".join(album_in_genre)
+
+
+def change_minutes_into_seconds(lasts):
+    sec_per_min = 60
+    album_sec = lasts.split(':')
+    return int(album_sec[0]) * sec_per_min + int(album_sec[1])
 
 def get_longest_album(albums):
     """
@@ -33,6 +37,11 @@ def get_longest_album(albums):
     :rtype: list
     """
 
+    longest = albums[0]
+    for album in albums:
+        if int(change_minutes_into_seconds(longest[LENGHT])) < int(change_minutes_into_seconds(album[LENGHT])):
+            longest = album
+            return ",".join(longest)
 
 def get_total_albums_length(albums):
     """
@@ -44,10 +53,9 @@ def get_total_albums_length(albums):
     """
     time = []
     for record in albums:
-        time.append(record[LASTS]([0]*60))
+        time.append(record[LENGHT]([0]*60))
         return time
 
-print(get_total_albums_length(albums))
 
 
 
