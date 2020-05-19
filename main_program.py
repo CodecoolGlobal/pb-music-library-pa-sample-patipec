@@ -1,6 +1,7 @@
 import music_reports
 import display
 import file_handling
+
 """
 The main program should use functions from music_reports and display modules
 """
@@ -22,11 +23,11 @@ def main():
           "2 ---> print whole list of our albums\n"
           "3 ---> check albums' names of given genre\n"
           "4 ---> show longest album\n"
-          "5 ---> show total lenght of albums\n")
+          "5 ---> show total length of albums\n")
     choice = int(input(">>>"))
 
-    if choice > 0 and choice <=5:
-        if choice == 1: # display function is strange
+    if 0 < choice <= 5:
+        if choice == 1:  # display function is strange
             album = input("Write album you want to check\n")
             display.print_album_info(album)
         elif choice == 2:
@@ -34,10 +35,14 @@ def main():
             display.print_albums_list(albums_data)
         elif choice == 3:
             genre = input("Write genre you want to show all albums in it\n").lower()
-            print(music_reports.get_albums_by_genre(albums, genre))
+            print(f" We have these albums in that genre: {music_reports.get_albums_by_genre(albums, genre)}")
         elif choice == 4:
             print(music_reports.get_longest_album(albums))
+        elif choice == 5:
+            print(f"Total lenght of all albums is {music_reports.get_total_albums_length(albums)}")
     else:
         print("There is no such choice")
+
+
 if __name__ == '__main__':
     main()

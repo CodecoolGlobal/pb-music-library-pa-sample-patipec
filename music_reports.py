@@ -52,9 +52,10 @@ def get_total_albums_length(albums):
     :rtype: float
     """
     time = []
-    for record in albums:
-        time.append(record[LENGHT]([0]*60))
-        return time
+    for album in albums:
+        time.append(change_minutes_into_seconds(album[LENGHT]))
+    total = sum(time) / 60
+    return total
 
 
 
